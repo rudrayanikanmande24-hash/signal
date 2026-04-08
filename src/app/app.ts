@@ -1,8 +1,9 @@
+import { CommonModule } from '@angular/common';
 import { Component, computed, effect, signal } from '@angular/core';
 
 @Component({
   selector: 'app-root',
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })
@@ -11,7 +12,7 @@ export class App {
 
 doubleTheCounter = computed(()=>{
   let doubledVal = this.counter()
-  return doubledVal.val
+  return doubledVal.val * 2;
 })
 
   counter = signal<Counter>({
